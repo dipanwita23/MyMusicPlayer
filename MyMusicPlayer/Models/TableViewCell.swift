@@ -12,7 +12,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var detailsSong: UILabel!
     @IBOutlet weak var artistImage: UIImageView!
-    
+    @IBOutlet weak var playPauseBtn : UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

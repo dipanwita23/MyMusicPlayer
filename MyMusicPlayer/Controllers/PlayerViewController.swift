@@ -113,13 +113,7 @@ class PlayerViewController: UIViewController {
         player?.volume = value
     }
     @objc func playPauseActions(_ slider:UISlider){
-        if ((player?.isPlaying) == true){
-            player?.pause()
-            playPauseBtn.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
-        }else{
-            player?.play()
-            playPauseBtn.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
-        }
+       
     }
     @objc func nextActions(_ slider:UISlider){
         if position < songArray.count - 1{
