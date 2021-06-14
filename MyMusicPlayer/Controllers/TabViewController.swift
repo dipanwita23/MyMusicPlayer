@@ -15,7 +15,7 @@ class TabViewController:  UIViewController , UITableViewDataSource , UITableView
     var song = [Songs]()
     var inx = 0
     var player : AVAudioPlayer?
-    var isplay = false
+    var isPlay = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,24 +69,19 @@ class TabViewController:  UIViewController , UITableViewDataSource , UITableView
         configure(position : indexPath.row)
         let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
         
-        if isplay != false {
-            isplay = false
+        if isPlay != false {
+            isPlay = false
             player?.pause()
             player?.volume = 0.5
             cell.playPauseBtn.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
         }else{
-            isplay = true
+            isPlay = true
             player?.play()
             player?.volume = 0.5
             cell.playPauseBtn.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
         }
         
-     /*   tableView.deselectRow(at: indexPath, animated: true)
-        let position = indexPath.row
-        let vc = storyboard?.instantiateViewController(identifier: "PlayerViewController")  as! PlayerViewController  
-        vc.position = position
-        vc.songArray = song
-       present(vc, animated: true, completion: nil)*/
+    
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
